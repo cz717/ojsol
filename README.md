@@ -1,6 +1,6 @@
 # ojsol
 
-[euler]
+[euler]  
 [Project Euler](https://projecteuler.net/)  
 
 [usaco]  
