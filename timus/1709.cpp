@@ -20,14 +20,6 @@ int find(int x)
 		return x;
 }
 
-int uni(int x, int y)
-{
-	int a = find(x);
-	int b = find(y);
-	ufset[a] = b;
-	return b;
-}
-
 int main()
 {
 	int n;
@@ -50,8 +42,10 @@ int main()
 	for (int i = 0; i < n; ++i) {
 		for (int j = i; j < n; ++j) {
 			if (matrix[i][j]) {
-				if (find(i) != find(j)) {
-					uni(i, j);
+				int x = find(i);
+				int y = find(j);
+				if (x != y) {
+					ufset[x] = y;
 					--comp;
 				}
 				else {

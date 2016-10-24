@@ -16,14 +16,6 @@ int find(int x)
 		return x;
 }
 
-int uni(int x, int y)
-{
-	int a = find(x);
-	int b = find(y);
-	ufset[a] = b;
-	return b;
-}
-
 int main()
 {
 	int n, k, m;
@@ -37,8 +29,10 @@ int main()
 	for (int i = 0; i < k; ++i)
 	{
 		cin >> a >> b;
-		if (find(a) != find(b)) {
-			uni(a, b);
+		int x = find(a);
+		int y = find(b);
+		if (x != y) {
+			ufset[x] = y;
 			++t;
 		}
 	}
